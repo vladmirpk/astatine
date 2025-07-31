@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard & Analytics - Astatine Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'space': ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        'astatine-blue': '#1e40af',
+                        'astatine-dark': '#1f2937',
+                        'astatine-accent': '#10b981',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-3d:hover {
+            transform: rotateY(10deg) rotateX(5deg) translateZ(20px);
+        }
+        
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .metric-card.green {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+        
+        .metric-card.orange {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .metric-card.purple {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 1rem 0;
+        }
+        
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(30, 64, 175, 0.3);
+            border-top: 2px solid #1e40af;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .data-point {
+            transition: all 0.3s ease;
+        }
+        
+        .data-point:hover {
+            transform: scale(1.1);
+            stroke-width: 3;
+        }
+        
+        .realtime-indicator {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-xl z-50 border-b border-gray-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold gradient-text">Astatine Systems</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-700 hover:text-astatine-blue px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">Home</a>
+                        <a href="mobile-apps.html" class="text-gray-700 hover:text-astatine-blue px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">Mobile Apps</a>
+                        <a href="advanced-features.html" class="text-gray-700 hover:text-astatine-blue px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">Advanced Features</a>
+                        <a href="index.html#contact" class="bg-astatine-blue text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-all duration-300">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-indigo-50 to-purple-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold text-astatine-dark mb-6">Dashboard & Analytics</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Advanced data visualization and real-time analytics solutions for modern businesses
+                </p>
+            </div>
+            
+            <!-- Key Metrics -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+                <div class="metric-card p-6 rounded-xl text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm opacity-90">Total Revenue</p>
+                            <p class="text-2xl font-bold" id="revenue">$2,847,392</p>
+                        </div>
+                        <div class="text-3xl">💰</div>
+                    </div>
+                    <div class="mt-2 flex items-center">
+                        <span class="text-green-300 text-sm">+12.5%</span>
+                        <div class="realtime-indicator ml-2"></div>
+                    </div>
+                </div>
+
+                <div class="metric-card green p-6 rounded-xl text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm opacity-90">Active Users</p>
+                            <p class="text-2xl font-bold" id="users">45,892</p>
+                        </div>
+                        <div class="text-3xl">👥</div>
+                    </div>
+                    <div class="mt-2 flex items-center">
+                        <span class="text-green-300 text-sm">+8.3%</span>
+                        <div class="realtime-indicator ml-2"></div>
+                    </div>
+                </div>
+
+                <div class="metric-card orange p-6 rounded-xl text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm opacity-90">Conversion Rate</p>
+                            <p class="text-2xl font-bold" id="conversion">3.24%</p>
+                        </div>
+                        <div class="text-3xl">📈</div>
+                    </div>
+                    <div class="mt-2 flex items-center">
+                        <span class="text-green-300 text-sm">+2.1%</span>
+                        <div class="realtime-indicator ml-2"></div>
+                    </div>
+                </div>
+
+                <div class="metric-card purple p-6 rounded-xl text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm opacity-90">Avg. Session</p>
+                            <p class="text-2xl font-bold" id="session">4m 32s</p>
+                        </div>
+                        <div class="text-3xl">⏱️</div>
+                    </div>
+                    <div class="mt-2 flex items-center">
+                        <span class="text-green-300 text-sm">+15.2%</span>
+                        <div class="realtime-indicator ml-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Dashboard Demo -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Interactive Dashboard Demo</h2>
+                <p class="text-xl text-gray-600">Experience real-time data visualization</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Chart Controls -->
+                <div class="space-y-8">
+                    <div class="dashboard-card p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4">Chart Controls</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Chart Type</label>
+                                <select id="chartType" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-astatine-blue focus:border-transparent">
+                                    <option value="line">Line Chart</option>
+                                    <option value="bar">Bar Chart</option>
+                                    <option value="pie">Pie Chart</option>
+                                    <option value="doughnut">Doughnut Chart</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Data Source</label>
+                                <select id="dataSource" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-astatine-blue focus:border-transparent">
+                                    <option value="sales">Sales Data</option>
+                                    <option value="users">User Analytics</option>
+                                    <option value="revenue">Revenue Metrics</option>
+                                    <option value="traffic">Traffic Sources</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Time Range</label>
+                                <select id="timeRange" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-astatine-blue focus:border-transparent">
+                                    <option value="7d">Last 7 Days</option>
+                                    <option value="30d">Last 30 Days</option>
+                                    <option value="90d">Last 90 Days</option>
+                                    <option value="1y">Last Year</option>
+                                </select>
+                            </div>
+                            
+                            <div class="flex space-x-4">
+                                <button id="updateChart" class="flex-1 bg-astatine-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300">
+                                    Update Chart
+                                </button>
+                                <button id="exportData" class="flex-1 bg-astatine-accent text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-600 transition-all duration-300">
+                                    Export Data
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Real-time Updates -->
+                    <div class="dashboard-card p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4">Real-time Updates</h3>
+                        <div class="space-y-3" id="updates">
+                            <div class="flex items-center space-x-3 p-3 bg-green-50 rounded-lg">
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <span class="text-sm">New user registered</span>
+                                <span class="text-xs text-gray-500 ml-auto">2s ago</span>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                <span class="text-sm">Sales transaction completed</span>
+                                <span class="text-xs text-gray-500 ml-auto">5s ago</span>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-orange-50 rounded-lg">
+                                <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                                <span class="text-sm">Server performance alert</span>
+                                <span class="text-xs text-gray-500 ml-auto">12s ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chart Display -->
+                <div class="dashboard-card p-6 rounded-xl">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-semibold">Data Visualization</h3>
+                        <div class="flex items-center space-x-2">
+                            <div class="realtime-indicator"></div>
+                            <span class="text-sm text-gray-600">Live</span>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="mainChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Analytics Features -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Advanced Analytics Features</h2>
+                <p class="text-xl text-gray-600">Powerful tools for data-driven decisions</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="dashboard-card p-6 rounded-xl card-3d">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold mb-4">Interactive Charts</h3>
+                    <p class="text-gray-600 mb-4">Dynamic charts with zoom, pan, and real-time updates using Chart.js and D3.js</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-sm">Zoom & Pan</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm">Real-time Updates</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span class="text-sm">Custom Animations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="dashboard-card p-6 rounded-xl card-3d">
+                    <div class="text-4xl mb-4">🔍</div>
+                    <h3 class="text-xl font-semibold mb-4">Data Filtering</h3>
+                    <p class="text-gray-600 mb-4">Advanced filtering and search capabilities with multiple criteria and date ranges</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-sm">Multi-criteria Filter</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm">Date Range Picker</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span class="text-sm">Saved Filters</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="dashboard-card p-6 rounded-xl card-3d">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-xl font-semibold mb-4">Mobile Responsive</h3>
+                    <p class="text-gray-600 mb-4">Optimized for all devices with touch-friendly interactions and responsive layouts</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-sm">Touch Gestures</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm">Responsive Design</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span class="text-sm">Offline Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="dashboard-card p-6 rounded-xl card-3d">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold mb-4">Performance Optimized</h3>
+                    <p class="text-gray-600 mb-4">High-performance rendering with lazy loading and efficient data handling</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-sm">Lazy Loading</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm">Data Caching</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span class="text-sm">WebGL Rendering</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="dashboard-card p-6 rounded-xl card-3d">
+                    <div class="text-4xl mb-4">🔐</div>
+                    <h3 class="text-xl font-semibold mb-4">Secure & Compliant</h3>
+                    <p class="text-gray-600 mb-4">Enterprise-grade security with GDPR compliance and role-based access control</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-sm">GDPR Compliant</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm">Role-based Access</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span class="text-sm">Data Encryption</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="dashboard-card p-6 rounded-xl card-3d">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-xl font-semibold mb-4">AI-Powered Insights</h3>
+                    <p class="text-gray-600 mb-4">Machine learning algorithms for predictive analytics and automated insights</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-sm">Predictive Analytics</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm">Anomaly Detection</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span class="text-sm">Auto Insights</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- D3.js Advanced Visualization -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Advanced D3.js Visualizations</h2>
+                <p class="text-xl text-gray-600">Custom data visualizations and interactive charts</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Force-Directed Graph -->
+                <div class="dashboard-card p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4">Network Graph</h3>
+                    <div id="networkGraph" class="h-80 bg-gray-50 rounded-lg"></div>
+                </div>
+                
+                <!-- Bubble Chart -->
+                <div class="dashboard-card p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-4">Bubble Chart</h3>
+                    <div id="bubbleChart" class="h-80 bg-gray-50 rounded-lg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-20 bg-gradient-to-r from-astatine-blue to-blue-600">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-white mb-6">
+                Ready for Advanced Analytics?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Let's build powerful dashboards and analytics solutions for your business
+            </p>
+            <a href="index.html#contact" class="inline-block bg-white text-astatine-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300">
+                Start Your Project
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Chart.js when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('mainChart');
+            if (!canvas) {
+                console.error('Chart canvas not found');
+                return;
+            }
+            
+            const ctx = canvas.getContext('2d');
+            let mainChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Sales',
+                        data: [12000, 19000, 15000, 25000, 22000, 30000],
+                        borderColor: '#1e40af',
+                        backgroundColor: 'rgba(30, 64, 175, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0,0,0,0.1)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Chart Controls
+            const updateChartBtn = document.getElementById('updateChart');
+            if (updateChartBtn) {
+                updateChartBtn.addEventListener('click', () => {
+                    const chartType = document.getElementById('chartType').value;
+                    const dataSource = document.getElementById('dataSource').value;
+                    
+                    // Update chart type
+                    mainChart.destroy();
+                    mainChart = new Chart(ctx, {
+                        type: chartType,
+                        data: {
+                            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                            datasets: [{
+                                label: dataSource.charAt(0).toUpperCase() + dataSource.slice(1),
+                                data: generateRandomData(),
+                                borderColor: '#1e40af',
+                                backgroundColor: chartType === 'line' ? 'rgba(30, 64, 175, 0.1)' : '#1e40af',
+                                tension: 0.4
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    grid: {
+                                        color: 'rgba(0,0,0,0.1)'
+                                    }
+                                },
+                                x: {
+                                    grid: {
+                                        display: false
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+            }
+
+            function generateRandomData() {
+                return Array.from({length: 6}, () => Math.floor(Math.random() * 30000) + 5000);
+            }
+
+            // Real-time metrics update
+            setInterval(() => {
+                const revenueEl = document.getElementById('revenue');
+                const usersEl = document.getElementById('users');
+                const conversionEl = document.getElementById('conversion');
+                const sessionEl = document.getElementById('session');
+                
+                if (revenueEl) revenueEl.textContent = '$' + (Math.random() * 1000000 + 2000000).toLocaleString();
+                if (usersEl) usersEl.textContent = Math.floor(Math.random() * 10000 + 40000).toLocaleString();
+                if (conversionEl) conversionEl.textContent = (Math.random() * 2 + 2).toFixed(2) + '%';
+                if (sessionEl) sessionEl.textContent = Math.floor(Math.random() * 3 + 2) + 'm ' + Math.floor(Math.random() * 60) + 's';
+            }, 3000);
+
+            // Initialize D3.js visualizations
+            initNetworkGraph();
+            initBubbleChart();
+
+        // D3.js Network Graph
+        function initNetworkGraph() {
+            const networkContainer = document.getElementById('networkGraph');
+            if (!networkContainer) {
+                console.error('Network graph container not found');
+                return;
+            }
+            
+            const width = 400;
+            const height = 320;
+            
+            const svg = d3.select('#networkGraph')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+            
+            const nodes = [
+                {id: 1, group: 1},
+                {id: 2, group: 1},
+                {id: 3, group: 2},
+                {id: 4, group: 2},
+                {id: 5, group: 3},
+                {id: 6, group: 3}
+            ];
+            
+            const links = [
+                {source: 1, target: 2},
+                {source: 1, target: 3},
+                {source: 2, target: 4},
+                {source: 3, target: 5},
+                {source: 4, target: 6}
+            ];
+            
+            const simulation = d3.forceSimulation(nodes)
+                .force('link', d3.forceLink(links).id(d => d.id))
+                .force('charge', d3.forceManyBody().strength(-100))
+                .force('center', d3.forceCenter(width / 2, height / 2));
+            
+            const link = svg.append('g')
+                .selectAll('line')
+                .data(links)
+                .enter().append('line')
+                .attr('stroke', '#999')
+                .attr('stroke-opacity', 0.6)
+                .attr('stroke-width', 1);
+            
+            const node = svg.append('g')
+                .selectAll('circle')
+                .data(nodes)
+                .enter().append('circle')
+                .attr('r', 8)
+                .attr('fill', d => d3.schemeCategory10[d.group])
+                .call(d3.drag()
+                    .on('start', dragstarted)
+                    .on('drag', dragged)
+                    .on('end', dragended));
+            
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+                
+                node
+                    .attr('cx', d => d.x)
+                    .attr('cy', d => d.y);
+            });
+            
+            function dragstarted(event) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                event.subject.fx = event.subject.x;
+                event.subject.fy = event.subject.y;
+            }
+            
+            function dragged(event) {
+                event.subject.fx = event.x;
+                event.subject.fy = event.y;
+            }
+            
+            function dragended(event) {
+                if (!event.active) simulation.alphaTarget(0);
+                event.subject.fx = null;
+                event.subject.fy = null;
+            }
+        }
+
+        // D3.js Bubble Chart
+        function initBubbleChart() {
+            const bubbleContainer = document.getElementById('bubbleChart');
+            if (!bubbleContainer) {
+                console.error('Bubble chart container not found');
+                return;
+            }
+            
+            const width = 400;
+            const height = 320;
+            
+            const svg = d3.select('#bubbleChart')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+            
+            const data = [
+                {name: 'React', value: 80, category: 'Frontend'},
+                {name: 'Vue', value: 60, category: 'Frontend'},
+                {name: 'Angular', value: 40, category: 'Frontend'},
+                {name: 'Node.js', value: 90, category: 'Backend'},
+                {name: 'Python', value: 85, category: 'Backend'},
+                {name: 'Java', value: 70, category: 'Backend'},
+                {name: 'MongoDB', value: 75, category: 'Database'},
+                {name: 'PostgreSQL', value: 65, category: 'Database'}
+            ];
+            
+            const color = d3.scaleOrdinal(d3.schemeCategory10);
+            
+            const simulation = d3.forceSimulation(data)
+                .force('charge', d3.forceManyBody().strength(5))
+                .force('center', d3.forceCenter(width / 2, height / 2))
+                .force('collision', d3.forceCollide().radius(d => d.value / 2 + 5));
+            
+            const node = svg.append('g')
+                .selectAll('g')
+                .data(data)
+                .enter().append('g');
+            
+            node.append('circle')
+                .attr('r', d => d.value / 2)
+                .attr('fill', d => color(d.category))
+                .attr('opacity', 0.7);
+            
+            node.append('text')
+                .text(d => d.name)
+                .attr('text-anchor', 'middle')
+                .attr('dy', '.35em')
+                .attr('font-size', '12px')
+                .attr('fill', 'white');
+            
+            simulation.on('tick', () => {
+                node
+                    .attr('transform', d => `translate(${d.x},${d.y})`);
+            });
+        }
+
+            // GSAP Animations
+            gsap.registerPlugin(ScrollTrigger);
+            
+            gsap.from('.card-3d', {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: '.card-3d',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+
+            // Export functionality
+            const exportBtn = document.getElementById('exportData');
+            if (exportBtn) {
+                exportBtn.addEventListener('click', () => {
+                    const data = {
+                        chartType: document.getElementById('chartType').value,
+                        dataSource: document.getElementById('dataSource').value,
+                        timeRange: document.getElementById('timeRange').value,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'dashboard-data.json';
+                    a.click();
+                    URL.revokeObjectURL(url);
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Automation & Workflows - Astatine Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'astatine-blue': '#1e40af',
+                        'astatine-dark': '#1f2937',
+                        'astatine-accent': '#10b981',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-inter bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold text-astatine-blue">Astatine Systems</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html#about" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="index.html#services" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+                        <a href="index.html#solutions" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Solutions</a>
+                        <a href="index.html#webdev" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Web Development</a>
+                        <a href="index.html#contact" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 gradient-bg" style="background-image: url('images/automation.jpg'); background-size: cover; background-position: center; background-blend-mode: overlay;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-white">
+                <h1 class="text-5xl lg:text-6xl font-bold mb-6">Business Automation & Workflows</h1>
+                <p class="text-xl lg:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto">
+                    Integrate tasks, emails, SMS, approvals, and more to streamline your business processes
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#workflows" class="bg-white text-astatine-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Workflow Design</a>
+                    <a href="#integrations" class="bg-white text-astatine-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Integrations</a>
+                    <a href="#automation" class="bg-white text-astatine-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Automation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Transform Your Business Operations</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Eliminate manual tasks, reduce errors, and increase productivity with intelligent automation solutions
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift border border-gray-100">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-astatine-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-astatine-dark mb-2">80% Efficiency Gain</h3>
+                        <p class="text-gray-600">Reduce manual work and eliminate repetitive tasks</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift border border-gray-100">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-astatine-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-astatine-dark mb-2">Error Elimination</h3>
+                        <p class="text-gray-600">Minimize human errors with automated processes</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift border border-gray-100">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-astatine-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-astatine-dark mb-2">24/7 Operations</h3>
+                        <p class="text-gray-600">Automated systems work around the clock</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold text-astatine-dark mb-6">Why Choose Our Automation?</h3>
+                    <p class="text-lg text-gray-700 mb-8">
+                        We design custom workflows that integrate seamlessly with your existing systems, providing intelligent automation solutions that scale with your business growth.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-semibold mr-4">✓</div>
+                            <span class="text-gray-700 font-medium">Custom Workflow Design</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-semibold mr-4">✓</div>
+                            <span class="text-gray-700 font-medium">Seamless Integration</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-semibold mr-4">✓</div>
+                            <span class="text-gray-700 font-medium">Scalable Solutions</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-semibold mr-4">✓</div>
+                            <span class="text-gray-700 font-medium">Ongoing Support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-semibold text-astatine-dark mb-6">Automation Benefits</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">📈</div>
+                            <span class="text-gray-700">Increased Efficiency</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">💰</div>
+                            <span class="text-gray-700">Cost Reduction</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">⚡</div>
+                            <span class="text-gray-700">Faster Processing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">🎯</div>
+                            <span class="text-gray-700">Improved Accuracy</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">📊</div>
+                            <span class="text-gray-700">Better Analytics</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">🔄</div>
+                            <span class="text-gray-700">Scalable Operations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Design Section -->
+    <section id="workflows" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Custom Workflow Design</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                    <h3 class="text-3xl font-semibold text-astatine-dark mb-6">Process Optimization</h3>
+                    <p class="text-gray-700 mb-6">
+                        We analyze your current business processes and design custom workflows that eliminate bottlenecks, reduce manual work, and improve overall efficiency. Our workflows are built to scale with your business growth.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-3">Process Analysis</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Current state mapping</li>
+                                <li>• Bottleneck identification</li>
+                                <li>• Efficiency metrics</li>
+                                <li>• Improvement opportunities</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-3">Workflow Design</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Custom process flows</li>
+                                <li>• Decision tree logic</li>
+                                <li>• Approval hierarchies</li>
+                                <li>• Exception handling</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-3">Implementation</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• System integration</li>
+                                <li>• User training</li>
+                                <li>• Testing & validation</li>
+                                <li>• Go-live support</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-3">Monitoring</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Performance tracking</li>
+                                <li>• Real-time dashboards</li>
+                                <li>• Continuous improvement</li>
+                                <li>• Optimization updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h4 class="text-2xl font-semibold text-astatine-dark mb-6">Workflow Types</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Approval workflows</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Document processing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Customer onboarding</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Order processing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Invoice generation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Support ticket routing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Inventory management</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Employee onboarding</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integrations" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Seamless Integrations</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                    <img src="images/snipe1.png" alt="System Integrations" class="rounded-2xl shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-3xl font-semibold text-astatine-dark mb-6">Connect Your Systems</h3>
+                    <p class="text-gray-700 mb-6">
+                        We integrate your automation workflows with existing business systems, ensuring seamless data flow and eliminating manual data entry across platforms.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-astatine-dark">Email Integration</h4>
+                                <p class="text-gray-600">Automated email responses, notifications, and data extraction from emails</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-astatine-dark">SMS & WhatsApp</h4>
+                                <p class="text-gray-600">Automated messaging for notifications, confirmations, and updates</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-astatine-dark">CRM Systems</h4>
+                                <p class="text-gray-600">Sync customer data, leads, and interactions across platforms</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-astatine-dark">Accounting Software</h4>
+                                <p class="text-gray-600">Automated invoice generation, payment processing, and financial reporting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automation Features Section -->
+    <section id="automation" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Automation Features</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🤖</div>
+                        <h3 class="text-xl font-semibold text-astatine-dark">Task Automation</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Repetitive task elimination</li>
+                        <li>• Scheduled operations</li>
+                        <li>• Trigger-based actions</li>
+                        <li>• Multi-step processes</li>
+                        <li>• Error handling</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">📧</div>
+                        <h3 class="text-xl font-semibold text-astatine-dark">Communication Automation</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Email auto-responses</li>
+                        <li>• SMS notifications</li>
+                        <li>• WhatsApp integration</li>
+                        <li>• Status updates</li>
+                        <li>• Reminder systems</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">📊</div>
+                        <h3 class="text-xl font-semibold text-astatine-dark">Data Processing</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Data extraction</li>
+                        <li>• Format conversion</li>
+                        <li>• Validation rules</li>
+                        <li>• Database updates</li>
+                        <li>• Report generation</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">✅</div>
+                        <h3 class="text-xl font-semibold text-astatine-dark">Approval Workflows</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Multi-level approvals</li>
+                        <li>• Conditional routing</li>
+                        <li>• Escalation rules</li>
+                        <li>• Deadline tracking</li>
+                        <li>• Audit trails</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🔗</div>
+                        <h3 class="text-xl font-semibold text-astatine-dark">System Integration</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• API connections</li>
+                        <li>• Webhook support</li>
+                        <li>• Database sync</li>
+                        <li>• File transfers</li>
+                        <li>• Real-time updates</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">📈</div>
+                        <h3 class="text-xl font-semibold text-astatine-dark">Analytics & Monitoring</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Performance metrics</li>
+                        <li>• Success rates</li>
+                        <li>• Error tracking</li>
+                        <li>• Usage analytics</li>
+                        <li>• Optimization insights</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Common Use Cases</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-semibold text-astatine-dark mb-4">Customer Service</h3>
+                    <ul class="text-gray-600 space-y-3">
+                        <li>• Automated ticket routing based on category</li>
+                        <li>• Auto-response emails for common inquiries</li>
+                        <li>• Customer satisfaction surveys</li>
+                        <li>• Follow-up reminders</li>
+                        <li>• SLA monitoring and alerts</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-semibold text-astatine-dark mb-4">Sales & Marketing</h3>
+                    <ul class="text-gray-600 space-y-3">
+                        <li>• Lead qualification and scoring</li>
+                        <li>• Automated follow-up sequences</li>
+                        <li>• Quote generation and approval</li>
+                        <li>• Contract processing</li>
+                        <li>• Commission calculations</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-semibold text-astatine-dark mb-4">Finance & Accounting</h3>
+                    <ul class="text-gray-600 space-y-3">
+                        <li>• Invoice generation and sending</li>
+                        <li>• Payment processing and reconciliation</li>
+                        <li>• Expense approval workflows</li>
+                        <li>• Financial report generation</li>
+                        <li>• Budget monitoring and alerts</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-semibold text-astatine-dark mb-4">Human Resources</h3>
+                    <ul class="text-gray-600 space-y-3">
+                        <li>• Employee onboarding automation</li>
+                        <li>• Leave request processing</li>
+                        <li>• Performance review scheduling</li>
+                        <li>• Payroll data collection</li>
+                        <li>• Training completion tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-astatine-blue to-blue-600">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-white mb-6">
+                Ready to Automate Your Business?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Let's identify automation opportunities and design custom workflows for your business.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="index.html#contact" class="bg-white text-astatine-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                    Get Free Assessment
+                </a>
+                <a href="index.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-astatine-blue transition-colors">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-astatine-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Astatine Systems</h3>
+                <p class="text-gray-300 mb-6">
+                    Empowering African businesses through intelligent automation solutions.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="index.html#contact" class="text-gray-300 hover:text-white transition-colors">Contact Us</a>
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">© 2025 Astatine Systems. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

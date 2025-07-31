@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Source System Setup & Customization - Astatine Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'astatine-blue': '#1e40af',
+                        'astatine-dark': '#1f2937',
+                        'astatine-accent': '#10b981',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-inter bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold text-astatine-blue">Astatine Systems</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html#about" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="index.html#services" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+                        <a href="index.html#solutions" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Solutions</a>
+                        <a href="index.html#webdev" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Web Development</a>
+                        <a href="index.html#contact" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-white">
+                <h1 class="text-5xl lg:text-6xl font-bold mb-6">Open Source System Setup & Customization</h1>
+                <p class="text-xl lg:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto">
+                    Expert implementation and customization of enterprise-grade open-source platforms to transform your business operations
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#odoo" class="bg-white text-astatine-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Odoo ERP</a>
+                    <a href="#snipe" class="bg-white text-astatine-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Snipe-IT</a>
+                    <a href="#osticket" class="bg-white text-astatine-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">osTicket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-astatine-dark mb-6">Why Open Source Solutions?</h2>
+                    <div class="space-y-4 text-gray-700">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h3 class="font-semibold text-astatine-dark">Cost-Effective</h3>
+                                <p>No expensive licensing fees. Pay only for implementation and customization.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h3 class="font-semibold text-astatine-dark">Full Control</h3>
+                                <p>Complete ownership of your data and system. No vendor lock-in.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h3 class="font-semibold text-astatine-dark">Customizable</h3>
+                                <p>Tailored to your specific business processes and requirements.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h3 class="font-semibold text-astatine-dark">Community Support</h3>
+                                <p>Active global community providing continuous improvements and security updates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-semibold text-astatine-dark mb-6">Our Implementation Process</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">1</div>
+                            <span class="text-gray-700">Requirements Analysis & Planning</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">2</div>
+                            <span class="text-gray-700">System Installation & Configuration</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">3</div>
+                            <span class="text-gray-700">Customization & Integration</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">4</div>
+                            <span class="text-gray-700">Testing & Quality Assurance</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">5</div>
+                            <span class="text-gray-700">Deployment & Training</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">6</div>
+                            <span class="text-gray-700">Ongoing Support & Maintenance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Odoo ERP Section -->
+    <section id="odoo" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Odoo Enterprise Resource Planning</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                    <img src="images/odoo.jpg" alt="Odoo ERP System" class="rounded-2xl shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-3xl font-semibold text-astatine-dark mb-6">Complete Business Management Suite</h3>
+                    <p class="text-gray-700 mb-6">
+                        Odoo is a comprehensive ERP solution that integrates all aspects of your business into a single, powerful platform. From sales and inventory to accounting and human resources, Odoo provides the tools you need to manage your entire organization efficiently.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-2">Sales Management</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• CRM & Lead Management</li>
+                                <li>• Sales Pipeline Tracking</li>
+                                <li>• Quotation & Order Management</li>
+                                <li>• Customer Portal</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-2">Inventory & Manufacturing</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Stock Management</li>
+                                <li>• Barcode Scanning</li>
+                                <li>• Manufacturing Orders</li>
+                                <li>• Quality Control</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-2">Financial Management</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• General Ledger</li>
+                                <li>• Accounts Payable/Receivable</li>
+                                <li>• Multi-Currency Support</li>
+                                <li>• Financial Reporting</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-2">Human Resources</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Employee Management</li>
+                                <li>• Time Tracking</li>
+                                <li>• Leave Management</li>
+                                <li>• Performance Reviews</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Snipe-IT Section -->
+    <section id="snipe" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Snipe-IT Asset Management</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                    <h3 class="text-3xl font-semibold text-astatine-dark mb-6">Complete Asset Lifecycle Management</h3>
+                    <p class="text-gray-700 mb-6">
+                        Snipe-IT provides comprehensive asset tracking and management for businesses of all sizes. From procurement to retirement, track every detail of your valuable assets with powerful reporting and automation features.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-astatine-dark">Asset Tracking</h4>
+                                <p class="text-gray-600">Track location, status, and history of all assets with barcode/QR code scanning</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-astatine-dark">Maintenance Scheduling</h4>
+                                <p class="text-gray-600">Automated maintenance reminders and service history tracking</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-astatine-dark">Depreciation Tracking</h4>
+                                <p class="text-gray-600">Automatic depreciation calculations and financial reporting</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-astatine-dark">User Assignment</h4>
+                                <p class="text-gray-600">Assign assets to users with check-in/check-out functionality</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/snipe1.png" alt="Snipe-IT Asset Management" class="rounded-2xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- osTicket Section -->
+    <section id="osticket" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">osTicket Support Ticketing</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                    <img src="images/osticket.png" alt="osTicket Support System" class="rounded-2xl shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-3xl font-semibold text-astatine-dark mb-6">Professional Customer Support Platform</h3>
+                    <p class="text-gray-700 mb-6">
+                        osTicket is a powerful, open-source customer support platform that helps businesses provide exceptional customer service. Manage support tickets, track customer interactions, and build a comprehensive knowledge base.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-3">Ticket Management</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Multi-department support</li>
+                                <li>• Priority-based routing</li>
+                                <li>• SLA monitoring</li>
+                                <li>• Escalation rules</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-3">Customer Portal</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Self-service portal</li>
+                                <li>• Knowledge base</li>
+                                <li>• Ticket submission</li>
+                                <li>• Status tracking</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-3">Reporting & Analytics</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Response time metrics</li>
+                                <li>• Agent performance</li>
+                                <li>• Customer satisfaction</li>
+                                <li>• Trend analysis</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-3">Integration</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Email integration</li>
+                                <li>• API connectivity</li>
+                                <li>• Third-party plugins</li>
+                                <li>• Custom workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Platforms Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Additional Platforms We Support</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">📚</div>
+                        <h3 class="text-2xl font-semibold text-astatine-dark">Moodle LMS</h3>
+                        <p class="text-astatine-blue font-medium">Learning Management System</p>
+                    </div>
+                    <p class="text-gray-600 text-center">
+                        Comprehensive e-learning platform for educational institutions and corporate training with course management, assessments, and collaborative tools.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">📈</div>
+                        <h3 class="text-2xl font-semibold text-astatine-dark">ERPNext</h3>
+                        <p class="text-astatine-blue font-medium">Modern ERP Platform</p>
+                    </div>
+                    <p class="text-gray-600 text-center">
+                        Next-generation ERP with modern UI, comprehensive business tools, and built-in accounting, inventory, and CRM functionality.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🔧</div>
+                        <h3 class="text-2xl font-semibold text-astatine-dark">Custom Solutions</h3>
+                        <p class="text-astatine-blue font-medium">Tailored Development</p>
+                    </div>
+                    <p class="text-gray-600 text-center">
+                        Custom development and integration services for any open-source platform to meet your specific business requirements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-astatine-blue to-blue-600">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-white mb-6">
+                Ready to Transform Your Business?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Let's discuss how open-source solutions can streamline your operations and reduce costs.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="index.html#contact" class="bg-white text-astatine-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                    Get Free Consultation
+                </a>
+                <a href="index.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-astatine-blue transition-colors">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-astatine-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Astatine Systems</h3>
+                <p class="text-gray-300 mb-6">
+                    Empowering African businesses through cost-effective, tailored technology solutions.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="index.html#contact" class="text-gray-300 hover:text-white transition-colors">Contact Us</a>
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">© 2025 Astatine Systems. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

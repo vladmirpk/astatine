@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management Systems - Astatine Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'astatine-blue': '#1e40af',
+                        'astatine-dark': '#1f2937',
+                        'astatine-accent': '#10b981',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-inter bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold text-astatine-blue">Astatine Systems</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html#about" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="index.html#services" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+                        <a href="index.html#solutions" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Solutions</a>
+                        <a href="index.html#webdev" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Web Development</a>
+                        <a href="index.html#contact" class="text-gray-700 hover:text-astatine-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-white">
+                <h1 class="text-5xl lg:text-6xl font-bold mb-6">School Management Systems</h1>
+                <p class="text-xl lg:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto">
+                    Affordable LMS & SIS platforms for schools & colleges with comprehensive management features
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#lms" class="bg-white text-astatine-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Learning Management</a>
+                    <a href="#sis" class="bg-white text-astatine-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Student Information</a>
+                    <a href="#features" class="bg-white text-astatine-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-astatine-dark mb-6">Comprehensive Educational Technology</h2>
+                    <p class="text-xl text-gray-700 mb-8">
+                        Modern schools need integrated systems that streamline administrative tasks while enhancing the learning experience. Our school management solutions combine powerful LMS and SIS capabilities in affordable, easy-to-use platforms.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-accent rounded-full flex items-center justify-center text-white font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Affordable pricing for schools of all sizes</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-accent rounded-full flex items-center justify-center text-white font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Local Zimbabwe support and training</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-accent rounded-full flex items-center justify-center text-white font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Customizable to your school's needs</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-accent rounded-full flex items-center justify-center text-white font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Mobile-friendly for parents and students</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-semibold text-astatine-dark mb-6">What We Offer</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">1</div>
+                            <span class="text-gray-700">Learning Management System (LMS)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">2</div>
+                            <span class="text-gray-700">Student Information System (SIS)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">3</div>
+                            <span class="text-gray-700">Parent Portal & Communication</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">4</div>
+                            <span class="text-gray-700">Administrative Tools</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">5</div>
+                            <span class="text-gray-700">Reporting & Analytics</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-astatine-blue rounded-full flex items-center justify-center text-white font-bold mr-4">6</div>
+                            <span class="text-gray-700">Integration & Customization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LMS Section -->
+    <section id="lms" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Learning Management System (LMS)</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                    <h3 class="text-3xl font-semibold text-astatine-dark mb-6">Powerful Learning Platform</h3>
+                    <p class="text-gray-700 mb-6">
+                        Our LMS provides a comprehensive digital learning environment that enhances teaching and learning experiences. Built on proven open-source platforms like Moodle, we deliver robust, scalable solutions for educational institutions.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-3">Course Management</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Create and organize courses</li>
+                                <li>• Upload learning materials</li>
+                                <li>• Set up assignments</li>
+                                <li>• Track student progress</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-3">Interactive Learning</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Discussion forums</li>
+                                <li>• Video conferencing</li>
+                                <li>• Collaborative tools</li>
+                                <li>• Real-time feedback</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-3">Assessment Tools</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Online quizzes</li>
+                                <li>• Automated grading</li>
+                                <li>• Progress tracking</li>
+                                <li>• Performance analytics</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-astatine-dark mb-3">Mobile Learning</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Mobile-responsive design</li>
+                                <li>• Offline content access</li>
+                                <li>• Push notifications</li>
+                                <li>• Cross-platform sync</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h4 class="text-2xl font-semibold text-astatine-dark mb-6">LMS Features</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Course creation and management</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Assignment submission and grading</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Discussion forums and chat</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Video and multimedia support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Progress tracking and analytics</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Mobile app for students</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Parent portal access</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4">✓</div>
+                            <span class="text-gray-700">Integration with SIS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIS Section -->
+    <section id="sis" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Student Information System (SIS)</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                    <img src="images/osticket2.png" alt="Student Information System" class="rounded-2xl shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-3xl font-semibold text-astatine-dark mb-6">Complete Student Lifecycle Management</h3>
+                    <p class="text-gray-700 mb-6">
+                        Our SIS manages every aspect of student information from enrollment to graduation. Streamline administrative processes, improve communication, and ensure data accuracy across your institution.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-astatine-dark">Student Records Management</h4>
+                                <p class="text-gray-600">Comprehensive student profiles with academic history, contact information, and documents</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-astatine-dark">Enrollment & Registration</h4>
+                                <p class="text-gray-600">Streamlined enrollment process with online forms and document uploads</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-astatine-dark">Attendance Tracking</h4>
+                                <p class="text-gray-600">Automated attendance monitoring with real-time reporting and alerts</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 bg-astatine-accent rounded-full flex items-center justify-center text-white text-sm font-bold mr-4 mt-1">✓</div>
+                            <div>
+                                <h4 class="font-semibold text-astatine-dark">Grade Management</h4>
+                                <p class="text-gray-600">Comprehensive grading system with report cards and transcript generation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Comprehensive Features</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">👥</div>
+                        <h3 class="text-xl font-semibold text-astatine-dark">Student Management</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Student profiles and records</li>
+                        <li>• Enrollment and registration</li>
+                        <li>• Attendance tracking</li>
+                        <li>• Academic history</li>
+                        <li>• Document management</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">👨‍🏫</div>
+                        <h3 class="text-xl font-semibold text-astatine-dark">Teacher Tools</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Grade book management</li>
+                        <li>• Lesson planning tools</li>
+                        <li>• Assignment creation</li>
+                        <li>• Progress monitoring</li>
+                        <li>• Communication tools</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">👨‍👩‍👧‍👦</div>
+                        <h3 class="text-xl font-semibold text-astatine-dark">Parent Portal</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Real-time grade access</li>
+                        <li>• Attendance monitoring</li>
+                        <li>• Communication with teachers</li>
+                        <li>• Fee payment tracking</li>
+                        <li>• Event notifications</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">📊</div>
+                        <h3 class="text-xl font-semibold text-astatine-dark">Administrative Tools</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Class scheduling</li>
+                        <li>• Fee management</li>
+                        <li>• Transportation tracking</li>
+                        <li>• Library management</li>
+                        <li>• Inventory control</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">📱</div>
+                        <h3 class="text-xl font-semibold text-astatine-dark">Mobile Access</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Mobile-responsive design</li>
+                        <li>• Push notifications</li>
+                        <li>• Offline functionality</li>
+                        <li>• Cross-platform sync</li>
+                        <li>• Touch-optimized interface</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">📈</div>
+                        <h3 class="text-xl font-semibold text-astatine-dark">Reporting & Analytics</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Academic performance reports</li>
+                        <li>• Attendance analytics</li>
+                        <li>• Financial reports</li>
+                        <li>• Custom dashboards</li>
+                        <li>• Export capabilities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Affordable Pricing</h2>
+                <div class="w-24 h-1 bg-astatine-blue mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl text-center">
+                    <h3 class="text-2xl font-semibold text-astatine-dark mb-4">Small School</h3>
+                    <div class="text-4xl font-bold text-astatine-blue mb-6">$500<span class="text-lg text-gray-600">/month</span></div>
+                    <ul class="text-gray-600 space-y-3 mb-8">
+                        <li>• Up to 200 students</li>
+                        <li>• Basic LMS & SIS</li>
+                        <li>• Email support</li>
+                        <li>• Standard features</li>
+                    </ul>
+                    <a href="index.html#contact" class="bg-astatine-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">Get Started</a>
+                </div>
+
+                <div class="bg-astatine-blue p-8 rounded-2xl text-center text-white transform scale-105">
+                    <h3 class="text-2xl font-semibold mb-4">Medium School</h3>
+                    <div class="text-4xl font-bold mb-6">$800<span class="text-lg text-blue-200">/month</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li>• Up to 500 students</li>
+                        <li>• Advanced LMS & SIS</li>
+                        <li>• Priority support</li>
+                        <li>• Custom features</li>
+                        <li>• Mobile app</li>
+                    </ul>
+                    <a href="index.html#contact" class="bg-white text-astatine-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Get Started</a>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl text-center">
+                    <h3 class="text-2xl font-semibold text-astatine-dark mb-4">Large School</h3>
+                    <div class="text-4xl font-bold text-astatine-blue mb-6">$1,200<span class="text-lg text-gray-600">/month</span></div>
+                    <ul class="text-gray-600 space-y-3 mb-8">
+                        <li>• Unlimited students</li>
+                        <li>• Full LMS & SIS suite</li>
+                        <li>• 24/7 support</li>
+                        <li>• Custom development</li>
+                        <li>• Advanced analytics</li>
+                    </ul>
+                    <a href="index.html#contact" class="bg-astatine-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-astatine-blue to-blue-600">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-white mb-6">
+                Ready to Modernize Your School?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Join hundreds of schools already using our affordable, powerful management systems.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="index.html#contact" class="bg-white text-astatine-blue px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                    Request Demo
+                </a>
+                <a href="index.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-astatine-blue transition-colors">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-astatine-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Astatine Systems</h3>
+                <p class="text-gray-300 mb-6">
+                    Empowering African schools with affordable, powerful management systems.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="index.html#contact" class="text-gray-300 hover:text-white transition-colors">Contact Us</a>
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">© 2025 Astatine Systems. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
