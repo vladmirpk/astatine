@@ -397,22 +397,9 @@
             z-index: -1;
         }
         
-        /* Magnetic Effect */
-        .magnetic {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+
         
-        /* Cursor Trail */
-        .cursor-trail {
-            position: fixed;
-            width: 8px;
-            height: 8px;
-            background: linear-gradient(135deg, #1e40af, #10b981);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-        }
+
         
         /* Glitch Effect */
         .glitch {
@@ -770,37 +757,57 @@
                     </div>
                 </div>
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#about" class="text-gray-700 hover:text-astatine-blue px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
+                    <div class="ml-8 flex items-baseline space-x-4">
+                        <a href="#about" class="text-gray-700 hover:text-astatine-blue px-2 py-1.5 rounded text-xs font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
                             About
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-astatine-blue transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <a href="#services" class="text-gray-700 hover:text-astatine-blue px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
+                        <a href="#services" class="text-gray-700 hover:text-astatine-blue px-2 py-1.5 rounded text-xs font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
                             Services
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-astatine-blue transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <a href="#portfolio" class="text-gray-700 hover:text-astatine-blue px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
+                        <a href="#portfolio" class="text-gray-700 hover:text-astatine-blue px-2 py-1.5 rounded text-xs font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
                             Portfolio
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-astatine-blue transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <a href="mobile-apps.html" class="text-gray-700 hover:text-astatine-blue px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
-                            Mobile Apps
+                        <a href="open-source-systems.html" class="text-gray-700 hover:text-astatine-blue px-2 py-1.5 rounded text-xs font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
+                            Open Source
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-astatine-blue transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <a href="dashboards.html" class="text-gray-700 hover:text-astatine-blue px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
+                        <a href="school-management.html" class="text-gray-700 hover:text-astatine-blue px-2 py-1.5 rounded text-xs font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
+                            Schools
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-astatine-blue transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="business-automation.html" class="text-gray-700 hover:text-astatine-blue px-2 py-1.5 rounded text-xs font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
+                            Automation
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-astatine-blue transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="mobile-apps.html" class="text-gray-700 hover:text-astatine-blue px-2 py-1.5 rounded text-xs font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
+                            Mobile
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-astatine-blue transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="dashboards.html" class="text-gray-700 hover:text-astatine-blue px-2 py-1.5 rounded text-xs font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
                             Dashboards
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-astatine-blue transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <a href="advanced-features.html" class="text-gray-700 hover:text-astatine-blue px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
+                        <a href="advanced-features.html" class="text-gray-700 hover:text-astatine-blue px-2 py-1.5 rounded text-xs font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
                             Advanced
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-astatine-blue transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <button id="dark-mode-toggle" class="p-2 rounded-lg hover:bg-gray-100/50 transition-all duration-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <a href="#pricing" class="text-gray-700 hover:text-astatine-blue px-2 py-1.5 rounded text-xs font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
+                            Pricing
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-astatine-blue transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="open-source-blog.html" class="text-gray-700 hover:text-astatine-blue px-2 py-1.5 rounded text-xs font-medium transition-all duration-300 hover:bg-gray-100/50 relative group">
+                            Blog
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-astatine-blue transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <button id="dark-mode-toggle" class="p-1.5 rounded hover:bg-gray-100/50 transition-all duration-300">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
                             </svg>
                         </button>
-                        <a href="#contact" class="bg-astatine-blue text-white px-6 py-2 rounded-lg text-sm font-medium modern-btn hover:bg-blue-700 transition-all duration-300">
+                        <a href="#contact" class="bg-astatine-blue text-white px-4 py-1.5 rounded text-xs font-medium hover:bg-blue-700 transition-all duration-300">
                             Contact
                         </a>
                     </div>
@@ -820,9 +827,14 @@
                 <a href="#about" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">About</a>
                 <a href="#services" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">Services</a>
                 <a href="#portfolio" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">Portfolio</a>
-                <a href="mobile-apps.html" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">Mobile Apps</a>
+                <a href="open-source-systems.html" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">Open Source</a>
+                <a href="school-management.html" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">Schools</a>
+                <a href="business-automation.html" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">Automation</a>
+                <a href="mobile-apps.html" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">Mobile</a>
                 <a href="dashboards.html" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">Dashboards</a>
-                <a href="advanced-features.html" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">Advanced Features</a>
+                <a href="advanced-features.html" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">Advanced</a>
+                <a href="#pricing" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">Pricing</a>
+                <a href="open-source-blog.html" class="block px-4 py-3 text-gray-700 hover:text-astatine-blue hover:bg-gray-100/50 rounded-lg transition-all duration-300">Blog</a>
                 <a href="#contact" class="block px-4 py-3 bg-astatine-blue text-white rounded-lg hover:bg-blue-700 transition-all duration-300">Contact</a>
             </div>
         </div>
@@ -851,58 +863,69 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div class="text-white relative z-10">
-                            <div class="text-reveal">
-                                <h1 class="text-6xl lg:text-8xl font-black mb-8 leading-tight font-space drop-shadow-2xl">
-                                    <span class="block gradient-text-animated" id="hero-title">Smart Software.</span>
-                                    <span class="block gradient-text-animated" id="hero-subtitle">Real-World</span>
-                                    <span class="block text-4xl lg:text-5xl font-light mt-4 drop-shadow-lg" id="hero-tagline">Impact.</span>
-                                </h1>
-                            </div>
-                            <p class="text-xl lg:text-2xl mb-8 text-blue-100 fade-in font-light drop-shadow-lg" id="hero-description">
-                                We build tailored solutions for businesses, governments, and organizations — from ERP and dashboards to GIS and field data tools.
+                            <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-2xl">
+                                Smart Software. Real-World Impact.
+                            </h1>
+                            <p class="text-xl lg:text-2xl mb-8 text-gray-300 drop-shadow-lg">
+                                Tailored solutions for businesses and organizations.
                             </p>
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="#contact" class="group inline-block bg-white text-astatine-blue px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                            
+                            <!-- Key Stats -->
+                            <div class="grid grid-cols-3 gap-6 mb-8">
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-white mb-1 counter" data-target="150">0</div>
+                                    <div class="text-sm text-blue-200">Projects</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-white mb-1 counter" data-target="98">0</div>
+                                    <div class="text-sm text-blue-200">Success</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-white mb-1 counter" data-target="5">0</div>
+                                    <div class="text-sm text-blue-200">Years</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-6">
+                                <a href="#contact" class="group inline-block bg-gradient-to-r from-astatine-blue to-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:from-blue-600 hover:to-astatine-blue transition-all duration-500 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 hover:-translate-y-1">
                                     <span class="relative z-10 flex items-center">
-                                        Get Free Consultation
-                                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        Start Your Project
+                                        <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="#services" class="group inline-block border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-astatine-blue transition-all duration-300 backdrop-blur-sm">
+                                <a href="#services" class="group inline-block border-2 border-white text-white px-10 py-5 rounded-2xl font-bold text-xl hover:bg-white hover:text-astatine-blue transition-all duration-500 backdrop-blur-sm shadow-xl hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1">
                                     <span class="relative z-10 flex items-center">
-                                        View Services
-                                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        Explore Solutions
+                                        <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                         </svg>
                                     </span>
                                 </a>
                             </div>
                             
-                            <!-- Tech Stack Preview -->
-                            <div class="mt-8 flex items-center gap-4">
-                                <div class="flex space-x-2">
-                                    <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-white/30 hover:bg-white/30 transition-all duration-300">Odoo</span>
-                                    <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-white/30 hover:bg-white/30 transition-all duration-300">Power BI</span>
-                                    <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-white/30 hover:bg-white/30 transition-all duration-300">QGIS</span>
-                                    <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-white/30 hover:bg-white/30 transition-all duration-300">PostGIS</span>
+                            <!-- Tech Stack -->
+                            <div class="mt-8">
+                                <div class="flex space-x-3">
+                                    <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-white/30">Odoo</span>
+                                    <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-white/30">Power BI</span>
+                                    <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-white/30">QGIS</span>
                                 </div>
-                                <span class="text-sm text-blue-200 font-medium">Trusted by businesses across Africa</span>
                             </div>
                         </div>
                         <div class="hidden lg:block relative z-10">
-                            <div class="glass-effect rounded-2xl p-8 float relative overflow-hidden drop-shadow-2xl">
-                                <!-- Animated background pattern -->
-                                <div class="absolute inset-0 opacity-10">
-                                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/20 to-transparent"></div>
-                                    <div class="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-astatine-accent/30 to-transparent rounded-full"></div>
+                            <div class="glass-effect rounded-3xl p-10 float relative overflow-hidden drop-shadow-2xl border border-white/20">
+                                <!-- Enhanced animated background pattern -->
+                                <div class="absolute inset-0 opacity-15">
+                                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/30 to-transparent"></div>
+                                    <div class="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tl from-astatine-accent/40 to-transparent rounded-full"></div>
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full"></div>
                                 </div>
                                 <div class="text-center text-white relative z-10">
-                                    <div class="text-6xl mb-4">💻</div>
-                                    <h3 class="text-2xl font-semibold mb-2">Jonathan N. Nkomo</h3>
-                                    <p class="text-blue-100">Systems Developer specializing in affordable, open-source solutions</p>
-                                    <div class="mt-4 flex justify-center space-x-2">
+                                    <div class="text-6xl mb-4">🚀</div>
+                                    <h3 class="text-2xl font-bold mb-2">Jonathan N. Nkomo</h3>
+                                    <p class="text-sm text-blue-100 mb-4">Systems Developer</p>
+                                    <div class="flex justify-center space-x-2">
                                         <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-white/30">ERP</span>
                                         <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-white/30">BI</span>
                                         <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-white/30">GIS</span>
@@ -925,7 +948,7 @@
                                 Enterprise Resource Planning
                             </h1>
                             <p class="text-xl lg:text-2xl mb-8 text-gray-300 drop-shadow-lg">
-                                Streamline operations with Odoo, ERPNext, and custom ERP solutions. Manage inventory, finance, HR, and customer relationships in one integrated system.
+                                Streamline operations with integrated business systems.
                             </p>
                             <div class="flex flex-col sm:flex-row gap-4">
                                 <a href="open-source-systems.html" class="inline-block bg-astatine-accent text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-600 transition-colors">
@@ -941,25 +964,25 @@
                                 <div class="bg-white/10 p-3 rounded-lg">
                                     <div class="flex items-center">
                                         <span class="text-green-400 mr-2">✓</span>
-                                        <span class="text-sm">Inventory Management</span>
+                                        <span class="text-sm">Inventory</span>
                                     </div>
                                 </div>
                                 <div class="bg-white/10 p-3 rounded-lg">
                                     <div class="flex items-center">
                                         <span class="text-green-400 mr-2">✓</span>
-                                        <span class="text-sm">Financial Accounting</span>
+                                        <span class="text-sm">Finance</span>
                                     </div>
                                 </div>
                                 <div class="bg-white/10 p-3 rounded-lg">
                                     <div class="flex items-center">
                                         <span class="text-green-400 mr-2">✓</span>
-                                        <span class="text-sm">Customer CRM</span>
+                                        <span class="text-sm">CRM</span>
                                     </div>
                                 </div>
                                 <div class="bg-white/10 p-3 rounded-lg">
                                     <div class="flex items-center">
                                         <span class="text-green-400 mr-2">✓</span>
-                                        <span class="text-sm">HR Management</span>
+                                        <span class="text-sm">HR</span>
                                     </div>
                                 </div>
                             </div>
@@ -993,7 +1016,7 @@
                                 Business Intelligence Dashboards
                             </h1>
                             <p class="text-xl lg:text-2xl mb-8 text-blue-100 drop-shadow-lg">
-                                Transform data into actionable insights with Power BI, Tableau, and custom analytics solutions. Make data-driven decisions with real-time dashboards.
+                                Transform data into actionable insights.
                             </p>
                             <div class="flex flex-col sm:flex-row gap-4">
                                 <a href="dashboards.html" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
@@ -1009,25 +1032,25 @@
                                 <div class="bg-white/10 p-3 rounded-lg">
                                     <div class="flex items-center">
                                         <span class="text-blue-300 mr-2">📊</span>
-                                        <span class="text-sm">Real-time Analytics</span>
+                                        <span class="text-sm">Analytics</span>
                                     </div>
                                 </div>
                                 <div class="bg-white/10 p-3 rounded-lg">
                                     <div class="flex items-center">
                                         <span class="text-blue-300 mr-2">📈</span>
-                                        <span class="text-sm">Performance Metrics</span>
+                                        <span class="text-sm">Metrics</span>
                                     </div>
                                 </div>
                                 <div class="bg-white/10 p-3 rounded-lg">
                                     <div class="flex items-center">
                                         <span class="text-blue-300 mr-2">🎯</span>
-                                        <span class="text-sm">Predictive Insights</span>
+                                        <span class="text-sm">Insights</span>
                                     </div>
                                 </div>
                                 <div class="bg-white/10 p-3 rounded-lg">
                                     <div class="flex items-center">
                                         <span class="text-blue-300 mr-2">📱</span>
-                                        <span class="text-sm">Mobile Dashboards</span>
+                                        <span class="text-sm">Mobile</span>
                                     </div>
                                 </div>
                             </div>
@@ -1048,73 +1071,7 @@
                         </div>
                     </div>
                 </div>
-            <!-- Slide 4: GIS & Spatial Analysis -->
-            <div class="hero-slide absolute inset-0 bg-gradient-to-br from-green-600 to-teal-700 flex items-center" style="background-image: url('images/virtual_reality.jpg'); background-size: cover; background-position: center;">
-                <!-- Dark overlay for text readability -->
-                <div class="absolute inset-0 bg-black/50"></div>
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div class="text-white relative z-10">
-                            <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-2xl">
-                                Geographic Information Systems
-                            </h1>
-                            <p class="text-xl lg:text-2xl mb-8 text-green-100 drop-shadow-lg">
-                                Spatial data analysis and mapping solutions with QGIS, PostGIS, and custom GIS applications. Perfect for field operations, asset tracking, and location intelligence.
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="advanced-features.html" class="inline-block bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-                                    Explore GIS Solutions
-                                </a>
-                                <a href="#contact" class="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-green-600 transition-colors">
-                                    Get Spatial Analysis
-                                </a>
-                            </div>
-                            
-                            <!-- GIS Features -->
-                            <div class="mt-8 grid grid-cols-2 gap-4">
-                                <div class="bg-white/10 p-3 rounded-lg">
-                                    <div class="flex items-center">
-                                        <span class="text-green-300 mr-2">🗺️</span>
-                                        <span class="text-sm">Interactive Mapping</span>
-                                    </div>
-                                </div>
-                                <div class="bg-white/10 p-3 rounded-lg">
-                                    <div class="flex items-center">
-                                        <span class="text-green-300 mr-2">📍</span>
-                                        <span class="text-sm">Asset Tracking</span>
-                                    </div>
-                                </div>
-                                <div class="bg-white/10 p-3 rounded-lg">
-                                    <div class="flex items-center">
-                                        <span class="text-green-300 mr-2">🚚</span>
-                                        <span class="text-sm">Route Optimization</span>
-                                    </div>
-                                </div>
-                                <div class="bg-white/10 p-3 rounded-lg">
-                                    <div class="flex items-center">
-                                        <span class="text-green-300 mr-2">📊</span>
-                                        <span class="text-sm">Spatial Analytics</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hidden lg:block relative z-10">
-                            <div class="glass-effect rounded-2xl p-8 drop-shadow-2xl">
-                                <div class="text-center text-white">
-                                    <div class="text-6xl mb-4">🗺️</div>
-                                    <h3 class="text-2xl font-semibold mb-2">Location Intelligence</h3>
-                                    <p class="text-green-100">Transform location data into business insights</p>
-                                    <div class="mt-4 flex justify-center space-x-2">
-                                        <span class="bg-white/20 px-2 py-1 rounded text-xs">QGIS</span>
-                                        <span class="bg-white/20 px-2 py-1 rounded text-xs">PostGIS</span>
-                                        <span class="bg-white/20 px-2 py-1 rounded text-xs">Custom</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
 
         <!-- Carousel Controls -->
@@ -1716,19 +1673,19 @@
             
             <!-- Interactive Grid -->
             <div class="interactive-grid mb-16">
-                <div class="grid-item bg-gradient-to-br from-blue-500 to-purple-600 p-6 rounded-xl magnetic" data-category="web">
+                <div class="grid-item bg-gradient-to-br from-blue-500 to-purple-600 p-6 rounded-xl" data-category="web">
                     <h3 class="text-lg font-semibold mb-2">Web Development</h3>
                     <p class="text-sm opacity-90">Modern web applications with cutting-edge technologies</p>
                 </div>
-                <div class="grid-item bg-gradient-to-br from-green-500 to-blue-600 p-6 rounded-xl magnetic" data-category="mobile">
+                <div class="grid-item bg-gradient-to-br from-green-500 to-blue-600 p-6 rounded-xl" data-category="mobile">
                     <h3 class="text-lg font-semibold mb-2">Mobile Apps</h3>
                     <p class="text-sm opacity-90">Cross-platform mobile solutions</p>
                 </div>
-                <div class="grid-item bg-gradient-to-br from-purple-500 to-pink-600 p-6 rounded-xl magnetic" data-category="design">
+                <div class="grid-item bg-gradient-to-br from-purple-500 to-pink-600 p-6 rounded-xl" data-category="design">
                     <h3 class="text-lg font-semibold mb-2">UI/UX Design</h3>
                     <p class="text-sm opacity-90">User-centered design solutions</p>
                 </div>
-                <div class="grid-item bg-gradient-to-br from-orange-500 to-red-600 p-6 rounded-xl magnetic" data-category="ai">
+                <div class="grid-item bg-gradient-to-br from-orange-500 to-red-600 p-6 rounded-xl" data-category="ai">
                     <h3 class="text-lg font-semibold mb-2">AI Integration</h3>
                     <p class="text-sm opacity-90">Smart automation and AI solutions</p>
                 </div>
@@ -2258,6 +2215,232 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-astatine-dark mb-4">Transparent Pricing</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Affordable solutions tailored to your needs. We believe in transparent pricing and value-driven services.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Web Development -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">🌐</div>
+                        <h3 class="text-2xl font-bold text-astatine-dark mb-2">Web Development</h3>
+                        <div class="text-4xl font-bold text-astatine-blue mb-2">From $50</div>
+                        <p class="text-gray-600">Starting price for basic websites</p>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Responsive Design</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">SEO Optimized</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Fast Loading</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Mobile Friendly</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="w-full bg-astatine-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors block text-center">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Small School -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">🏫</div>
+                        <h3 class="text-2xl font-bold text-astatine-dark mb-2">Small School</h3>
+                        <div class="text-4xl font-bold text-astatine-blue mb-2">$500/month</div>
+                        <p class="text-gray-600">One-time installation + maintenance</p>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Up to 200 students</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Basic LMS & SIS</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Email support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Standard features</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="w-full bg-astatine-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors block text-center">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Medium School -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">🏫</div>
+                        <h3 class="text-2xl font-bold text-astatine-dark mb-2">Medium School</h3>
+                        <div class="text-4xl font-bold text-astatine-blue mb-2">$800/month</div>
+                        <p class="text-gray-600">One-time installation + maintenance</p>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Up to 500 students</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Advanced LMS & SIS</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Priority support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Mobile app</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="w-full bg-astatine-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors block text-center">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+
+            <!-- Additional School Plans -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <!-- Large School -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">🏫</div>
+                        <h3 class="text-2xl font-bold text-astatine-dark mb-2">Large School</h3>
+                        <div class="text-4xl font-bold text-astatine-blue mb-2">$1,200/month</div>
+                        <p class="text-gray-600">One-time installation + maintenance</p>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Unlimited students</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Full LMS & SIS suite</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">24/7 support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Advanced analytics</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="w-full bg-astatine-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors block text-center">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Custom Systems -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">⚙️</div>
+                        <h3 class="text-2xl font-bold text-astatine-dark mb-2">Custom Systems</h3>
+                        <div class="text-4xl font-bold text-astatine-blue mb-2">Custom Quote</div>
+                        <p class="text-gray-600">One-time installation + maintenance</p>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">ERP Systems</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Business Automation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Mobile Applications</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Custom Development</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="w-full bg-astatine-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors block text-center">
+                        Get Quote
+                    </a>
+                </div>
+
+                <!-- Advanced Solutions -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">🚀</div>
+                        <h3 class="text-2xl font-bold text-astatine-dark mb-2">Advanced Solutions</h3>
+                        <div class="text-4xl font-bold text-astatine-blue mb-2">Custom Quote</div>
+                        <p class="text-gray-600">One-time installation + maintenance</p>
+                    </div>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">BI Dashboards</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">GIS Mapping</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">AI Integration</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span class="text-gray-700">Custom APIs</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="w-full bg-astatine-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors block text-center">
+                        Discuss Project
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <div class="bg-blue-50 rounded-2xl p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-astatine-dark mb-4">Why Our Pricing Works for You</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">💰</div>
+                            <h4 class="font-semibold text-astatine-dark mb-2">Affordable Entry</h4>
+                            <p class="text-gray-600 text-sm">Start with web development from just $50</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">🔧</div>
+                            <h4 class="font-semibold text-astatine-dark mb-2">Open Source Benefits</h4>
+                            <p class="text-gray-600 text-sm">No licensing fees, one-time installation</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">🛠️</div>
+                            <h4 class="font-semibold text-astatine-dark mb-2">Ongoing Support</h4>
+                            <p class="text-gray-600 text-sm">Maintenance fees for continuous support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2539,7 +2722,7 @@
         setInterval(() => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
-        }, 5000);
+        }, 8000);
 
         // Dot navigation
         dots.forEach((dot, index) => {
@@ -2765,48 +2948,9 @@
             }
         }
 
-        // Magnetic Effect
-        const magneticElements = document.querySelectorAll('.magnetic');
-        magneticElements.forEach(element => {
-            element.addEventListener('mousemove', (e) => {
-                const rect = element.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                
-                gsap.to(element, {
-                    x: x * 0.3,
-                    y: y * 0.3,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            });
-            
-            element.addEventListener('mouseleave', () => {
-                gsap.to(element, {
-                    x: 0,
-                    y: 0,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            });
-        });
 
-        // Cursor Trail Effect
-        let cursorTrails = [];
-        document.addEventListener('mousemove', (e) => {
-            const trail = document.createElement('div');
-            trail.className = 'cursor-trail';
-            trail.style.left = e.clientX + 'px';
-            trail.style.top = e.clientY + 'px';
-            document.body.appendChild(trail);
-            
-            cursorTrails.push(trail);
-            
-            setTimeout(() => {
-                trail.remove();
-                cursorTrails = cursorTrails.filter(t => t !== trail);
-            }, 1000);
-        });
+
+
 
         // Performance Monitoring
         let frameCount = 0;
@@ -3270,32 +3414,7 @@
                 loop: true
             });
             
-            // Advanced mouse interactions (without irritating trail)
-            document.addEventListener('mousemove', (e) => {
-                // Subtle magnetic effect for interactive elements
-                const magneticElements = document.querySelectorAll('.magnetic');
-                magneticElements.forEach(element => {
-                    const rect = element.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    
-                    if (Math.abs(x) < rect.width && Math.abs(y) < rect.height) {
-                        gsap.to(element, {
-                            x: x * 0.1,
-                            y: y * 0.1,
-                            duration: 0.3,
-                            ease: 'power2.out'
-                        });
-                    } else {
-                        gsap.to(element, {
-                            x: 0,
-                            y: 0,
-                            duration: 0.3,
-                            ease: 'power2.out'
-                        });
-                    }
-                });
-            });
+
             
             // Parallax scrolling effect
             window.addEventListener('scroll', () => {
